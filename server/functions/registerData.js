@@ -18,9 +18,9 @@ function registerImageData(id, x, y, w, h, c, r){
             console.log('completely registered, id:', id);
     
             if (w > 970 || h > 2380){
-                resolve('detect_parking/('+ x +','+ y +')');
+                resolve('detect_near('+ c +')/('+ x +','+ y +')');
             }else{
-                reject('detect_parking/('+ x +','+ y +')');
+                reject('detect_far('+ c +')/('+ x +','+ y +')');
             }
     
     
