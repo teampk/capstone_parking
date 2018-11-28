@@ -2,6 +2,7 @@ import cv2
 import sys
 import numpy as np
 import time
+from datetime import datetime
 
 
 def get_output_layers(net):
@@ -17,6 +18,11 @@ def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
     color = COLORS[class_id]
     cv2.rectangle(img, (x, y), (x_plus_w, y_plus_h), color, 2)
     cv2.putText(img, label, (x-10, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+
+
+def get_current_time():
+    now = datetime.now()
+    return '%s%s%s%s' % ( now.hour, now.minute, now.second, now.microsecond)
 
 
 if __name__ == "__main__":
@@ -119,6 +125,6 @@ if __name__ == "__main__":
         cv2.imshow("Object Detection", image)
         cv2.waitKey()
     cv2.destroyAllWindows()
-    # cv2.imwrite("object-detection.jpg", image)
+    cv2.imwrite("./public/output/"+get_current_time()+".jpg", image)
 
 
