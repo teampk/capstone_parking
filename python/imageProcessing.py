@@ -61,6 +61,7 @@ if __name__ == "__main__":
     # Size of Image
     width = image.shape[1]
     height = image.shape[0]
+    # print('w:',width,'h:',height)
     scale = 0.00392
     classes = None
 
@@ -113,10 +114,11 @@ if __name__ == "__main__":
     # print("Performance Time:" + str(perform_time))
 
     # ( rasp image size = 3280 x 2464 )
-
-    imageResized = cv2.resize(image, (820, 616))
-    cv2.imshow("Object Detection", imageResized)
-    cv2.waitKey()
-    cv2.imwrite("object-detection.jpg", image)
+    # imageResized = cv2.resize(image, (820, 616))
+    if len(sys.argv) == 2:
+        cv2.imshow("Object Detection", image)
+        cv2.waitKey()
     cv2.destroyAllWindows()
+    # cv2.imwrite("object-detection.jpg", image)
+
 

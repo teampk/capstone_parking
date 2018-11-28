@@ -35,7 +35,7 @@ router.post('/process', function(req,res){
       });
     } else {
       // 기기 id
-      options.args[0] = 'helmet32';
+      options.args[0] = 'parking';
       // 사진 정보 (찍은 날짜, 시간)
       // options.args[1] = req.files[0].originalname;
       options.args[1] = 'rasp_input_image.jpg'; 
