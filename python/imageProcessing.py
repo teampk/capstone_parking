@@ -22,7 +22,7 @@ def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
 
 def get_current_time():
     now = datetime.now()
-    return '%s'+'_'+%s+'_'+%s+'_'+%s' % ( now.hour, now.minute, now.second, now.microsecond)
+    return str(now.hour)+'_'+str(now.minute)+'_'+str(now.second)+'_'+str(now.microsecond)
 
 
 if __name__ == "__main__":
